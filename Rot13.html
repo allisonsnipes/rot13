@@ -1,11 +1,17 @@
-{% extends " index.html" %}
-{% block content %}
+<!DOCTYPE html>
 
-<form method="post" action="/rot13">
-  <h2>Enter text to encrypt</h2>
-  <textarea name="text" style="height: 100px; width: 400px;">
-  </textarea>
-  <br>
-  <input type="submit"> </input>
-</form>
-{% endblock%}
+<html> <!--missing html tag" -->
+  <head> <!--missing header tag -->
+    <title> Unit 2 Rot 13 </title> <!--along the top of window tab, missing this too-->
+  </head>
+
+  <body> <!--always need body tag -->
+    <h2> Enter some text below into ROT13 </h2>
+    <form method="post">
+      <textarea name="text"
+                style="height: 100px; width: 400px;">{{text}}</textarea> <!-- {{textarea}} is not escaping -->
+      <br>
+      <input type="submit"> </input> <!--submit button -->
+    </form>
+  </body>
+</html>
