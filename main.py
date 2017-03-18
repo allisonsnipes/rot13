@@ -3,6 +3,7 @@ import webapp2 #loads the webapplication
 import jinja2 #does it matter which you import 1st?
 
 import re #used for upload to the re.compiler
+from string import letters #read up on this
 from google.appengine.ext import db #interpreted as import database from google app engine
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates') #creates a directory within our folder called templates
@@ -88,4 +89,5 @@ class Welcome(BaseHandler):
 
 app = webapp2.WSGIApplication([('/', SignupPage),
                                 ('/rot13', Rot13),
+
                                 ('/welcomepage', Welcome)], debug=True)
